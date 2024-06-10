@@ -54,7 +54,14 @@ class CashbookProvider with ChangeNotifier {
   Transaction? getTransaction(String cashbookId, String transactionId) {
     final cashbook = _cashbooks.firstWhere(
         (cashbook) => cashbook.id == cashbookId,
-        orElse: () => Cashbook(id: '', name: '', transactions: []));
+        orElse: () => Cashbook(
+            id: '',
+            name: '',
+            description: "",
+            color: "",
+            currency: "",
+            categories: [],
+            transactions: []));
     return cashbook.transactions
         .firstWhere((transaction) => transaction.id == transactionId);
   }
