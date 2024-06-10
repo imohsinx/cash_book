@@ -1,6 +1,6 @@
 import 'package:cash_book/home.dart';
-import 'package:cash_book/providers/cash_tracker.dart';
-import 'package:cash_book/providers/theme_changer.dart';
+import 'package:cash_book/cashbook_provider.dart';
+import 'package:cash_book/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,7 +8,7 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => CashTracker()),
+        ChangeNotifierProvider(create: (_) => CashbookProvider()),
         ChangeNotifierProvider(create: (_) => ThemeChanger()),
       ],
       child: MyApp(),
